@@ -92,7 +92,7 @@ a:hover {
 
 /*
 .bl-main > section:active{
-	background: #5fa530;
+	background: #2bb4ed;
 }
 */
 .bl-main > section:first-child {
@@ -223,7 +223,7 @@ a:hover {
 	background-size: 40px;
 }
 .bl-icon-close:before {
-	background: url(../images/wizardSprite@2x.png) center -339px;
+	background: url(../images/wizardSprite@2x.png) center -337px;
 	background-size: 40px;
 	top: 0;
 }
@@ -268,7 +268,7 @@ a:hover {
 	font-size: 2em;
 	font-weight: 700;
 	margin: 0 0 20px 0;
-	color: #5fa530;
+	color: #2bb4ed;
 }
 
 .bl-content article {
@@ -284,7 +284,7 @@ a:hover {
 }
 
 .bl-content a {
-	color: #5fa530;
+	color: #2bb4ed;
 }
 
 .bl-content ul {
@@ -407,7 +407,7 @@ section.bl-expand .bl-icon-close {
 	-webkit-perspective: 1000;
 }
 .bl-content .moreInfo.open {
-	border-bottom: 1px solid #5fa530;
+	border-bottom: 1px solid #2bb4ed;
 }
 
 .bl-content .moreInfo.first {
@@ -415,7 +415,7 @@ section.bl-expand .bl-icon-close {
 	margin-top: 30px;
 }
 .bl-content .moreInfo.first.open {
-	border-top: 1px solid #5fa530;
+	border-top: 1px solid #2bb4ed;
 }
 
 
@@ -447,10 +447,10 @@ section.bl-expand .bl-icon-close {
 }
 .bl-content a.moreInfoTrigger:active,
 .bl-content .open a.moreInfoTrigger {
-	background: #5fa530;
+	background: #2bb4ed;
 	color: #fff;
-	border-left: 1px solid #5fa530;
-	border-right: 1px solid #5fa530;
+	border-left: 1px solid #2bb4ed;
+	border-right: 1px solid #2bb4ed;
 }
 .bl-content a.moreInfoTrigger:before,
 .bl-content a.moreInfoTrigger:after {
@@ -492,8 +492,8 @@ section.bl-expand .bl-icon-close {
 
 .bl-content .moreInfoToggle {
 	padding: 10px 20px 10px;
-	border-left: 1px solid #5fa530;
-	border-right: 1px solid #5fa530;
+	border-left: 1px solid #2bb4ed;
+	border-right: 1px solid #2bb4ed;
 	overflow: hidden;
 }
 
@@ -516,6 +516,11 @@ section.bl-expand .bl-icon-close {
 		margin: 0;
 		top: 6px;
 		left: 10px;
+	}
+	.bl-icon-close:before {
+		margin: 0;
+		top: 0;
+		left: 0;
 	}
 	.bl-main > section {
 		position: absolute;
