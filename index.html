@@ -1,5 +1,6 @@
 <html lang="en" class=" js no-touch cssanimations csstransitions" style=""><head>
 		<meta charset="UTF-8">
+		<base href="http://ivyengine.github.io/guide/">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
 		<title>Guide for Ivy Engine</title>
@@ -211,18 +212,26 @@ vertical-align: middle;
 @media (max-width: 1000px) {
   #buyAbImage {
 	background:url("https://kundesenter.aftenposten.no/wp-content/uploads/min-side-mobil-app.jpg");
-	background-size:100% 100%;
+	background-size:100% auto;
 	width: 100%;
 	height: 100%;
-	margin-left:3%;
-	margin-right:25%;
 	background-repeat:no-repeat;
-
+	position: absolute;
 }
 
  #buyAbImgContainer { 
-	width:95%;
-	height:50%;
+	width:100%;
+	height:25%;
+	position: relative;
+    padding-bottom: 100%;
+}
+
+#navigateImg { 
+	background:url("https://kundesenter.aftenposten.no/wp-content/uploads/min-side-mobil-app.jpg");
+	background-size:100% auto;
+	background-repeat: no-repeat; 
+	width: 100%;
+	height: 100%;
 }
 
 .grid-3-4 {
@@ -265,18 +274,27 @@ height:100%;}
 	
 	#buyAbImgContainer {
 	
-background-size:290px 220px;
+background-size:360px 270px;
 background-repeat:no-repeat;
-width:290px;
-height:220px;
+width:360px;
+height:270px;
+margin-top:10px;
 }
+
+#navigateImg { 
+	background:url("https://kundesenter.aftenposten.no/wp-content/uploads/guide.png");
+	background-size:100% auto;
+	width: 100%;
+	height: 100%;
+}
+
 
 .okimage{
 	background-image: url(https://kundesenter.aftenposten.no/wp-content/themes/minside/library/efx/true.svg);
 background-repeat: no-repeat;
 width: 34px;
 height: 34px;
-position: absolute;
+position: absolute; 
 margin-top: 10px;
   
   }
@@ -523,9 +541,9 @@ Abonnementet administreres via din iTunes-konto. Når du abonnerer via iTunes ha
 					<div class="bl-content">
 						<h2 style="text-align: center;">Slik navigerer du i Aftenposten+</h2>
 						<article>
-<img  alt="guide" style="display: block;
+<div id="navigateImg" alt="guide" style="display: block;
     margin-left: auto;
-    margin-right: auto" src="https://kundesenter.aftenposten.no/wp-content/uploads/guide.png" width="90%" height="150%">
+    margin-right: auto" ></div>
 </article>     
 	 </div>
 					
