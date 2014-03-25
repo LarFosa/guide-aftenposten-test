@@ -8,6 +8,30 @@
 		<meta name="author" content="Agens AS">
 		<link rel="stylesheet" type="text/css" href="css/component.css">
 		<script src="js/modernizr.custom.js"></script>
+
+		<script>
+function checkDevice() 
+{
+var ua = navigator.userAgent.toLowerCase();
+
+var isAndroid = ua.indexOf("android") > -1; 
+
+if ((ua.indexOf('iphone') != -1) || (ua.indexOf('ipod') != -1) || (ua.indexOf('ipad') != -1)) {
+	document.getElementById("btnGP1").style.visibility="hidden"; 
+	document.getElementById("btnGP2").style.visibility="hidden";
+	document.getElementById("btnGP3").style.visibility="hidden";
+}
+
+if(isAndroid){
+	document.getElementById("btnAppStore1").style.visibility="hidden";
+	document.getElementById("btnAppStore2").style.visibility="hidden";
+	document.getElementById("btnAppStore3").style.visibility="hidden";
+	document.getElementById("btnAppStore4").style.visibility="hidden";
+	}
+}
+</script>
+		
+		
 		
 		<style>
   
@@ -33,7 +57,10 @@ overflow: hidden;
 padding: 2em;
 }
   
-  A:link {text-decoration: underline}
+  A:link {text-decoration: underline;
+  text-transform:capitalize;
+  	
+  }
   
   .product-table tr:nth-of-type(even) {
 background-color: #fcfcfc;
@@ -93,6 +120,7 @@ display: block;
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 box-sizing: border-box;
+
 }
   [class*=grid-] {
 float: left;
@@ -106,7 +134,7 @@ padding-right: 5%;
 }
   
 
-	
+
   
 
 
@@ -211,18 +239,26 @@ vertical-align: middle;
 @media (max-width: 1000px) {
   #buyAbImage {
 	background:url("https://kundesenter.aftenposten.no/wp-content/uploads/min-side-mobil-app.jpg");
-	background-size:100% 100%;
+	background-size:100% auto;
 	width: 100%;
 	height: 100%;
-	margin-left:3%;
-	margin-right:25%;
 	background-repeat:no-repeat;
-
+	position: absolute;
 }
 
  #buyAbImgContainer { 
-	width:95%;
-	height:50%;
+	width:100%;
+	height:25%;
+	position: relative;
+    padding-bottom: 100%;
+}
+
+#navigateImg { 
+	background:url("https://kundesenter.aftenposten.no/wp-content/uploads/min-side-mobil-app.jpg");
+	background-size:100% auto;
+	background-repeat: no-repeat; 
+	width: 100%;
+	height: 100%;
 }
 
 .grid-3-4 {
@@ -257,51 +293,61 @@ margin-top: 14px;
 @media (min-width: 1000px) {
   #buyAbImage {
 	background:url("https://kundesenter.aftenposten.no/wp-content/uploads/nyapp.png");
-	
+
 background-size:100% 100%;
 background-repeat:no-repeat;
 width:100%;
 height:100%;}
-	
+
 	#buyAbImgContainer {
-	
-background-size:290px 220px;
+
+background-size:360px 270px;
 background-repeat:no-repeat;
-width:290px;
-height:220px;
+width:360px;
+height:270px;
+margin-top:10px;
 }
+
+#navigateImg { 
+	background:url("https://kundesenter.aftenposten.no/wp-content/uploads/guide.png");
+	background-size:100% auto;
+	width: 100%;
+	height: 100%;
+}
+
 
 .okimage{
 	background-image: url(https://kundesenter.aftenposten.no/wp-content/themes/minside/library/efx/true.svg);
 background-repeat: no-repeat;
 width: 34px;
 height: 34px;
-position: absolute;
+position: absolute; 
 margin-top: 10px;
   
   }
 
 #buyAbText {
- width: 65%;
+ width: 55%;
 }
 
 #feedbackBtn {
  width: 300px;
 }
-	
+
 	  .grid-1-4 {
+	  	margin-left:10%;
 width: 320px;
 }
-	
+
 	.grid-3-4 {
 width: 40%;
 }
 
 </style>
-		 
-		
+
+
 	</head>
-	<body> 
+	<body onload="checkDevice()"> 
 		<div class="container" style="height: 100%;
 font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue"', 
   Helvetica, Arial, "Lucida Grande", sans-serif;" >	
@@ -313,19 +359,19 @@ font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue"',
 					<div class="bl-content">
 						<h2 style="text-align:center ">Aftenposten+</h2>
 							<div style="height:2px; width:85%;border-bottom: 1px solid #e5e5e5; margin-bottom:10px;position: absolute;"></div>	
-							
+
 							<article> 
-							
-								
-						
+
+
+
 							<div id="buyAbImgContainer" style="float:left;">
 							<div id="buyAbImage" class="attachment-full wp-post-image" alt="Aftenposten+"
 							style="float:left;"></div>
 							</div>
-							
-							
-							
-							
+
+
+
+
 							<div id="buyAbText" style="margin-left:10px; position: relative; float:left;">
 						<h3 >Velkommen til Aftenposten+!</h3>
 						<h4 style="font-size: 1.2em; line-height: 1.2;
@@ -365,9 +411,9 @@ Telefon: 05040</p>
 Telefon: 907 10 591<br>
 <a href="mailto:christian.raae@aftenposten.no">christian.raae@aftenposten.no</a></p>	
 </div>	
-							
+
 						</article>
-						
+
 					</div>
 					<span class="bl-icon bl-icon-close"></span>
 				</section>
@@ -377,22 +423,22 @@ Telefon: 907 10 591<br>
 					</div>
 					<div class="bl-content">
 						<h2 style="text-align:center">Kjøp abonnement</h2>
-	
-	
+
+
 						<article>
-						
+
 	<div style="border-bottom: 1px solid #e5e5e5; margin-bottom:10px;"></div>					
-						
+
 							<div style="border-bottom: 1px solid #e5e5e5; margin-bottom:10px;position: fixed;"></div>					
-						
+
 							<div id="buyAbImgContainer" style="float:left;">
 							<div width="100%" id="buyAbImage" class="attachment-full wp-post-image" alt="Aftenposten+" height="100%"
 							style="float:left;"></div>
 							</div>
-							
-							
-							
-							
+
+
+
+
 							<div id="buyAbText" style="margin-left:10px; position: relative; float:left;">
 							<p>Full tilgang til alt fra Aftenposten – inkludert vår nye app <strong>Aftenposten+</strong>. Daglig digital utgave av Aftenposten, samt full oppdatering på alt som skjer gjennom døgnet i én og samme app!</p>
 <p><a href="http://kundewebtest.aftenposten.no/bestilling/skjema.htm?id=251&amp;utm_source=pluss&amp;utm_medium=button&amp;utm_content=digital&amp;utm_campaign=inapp" style="color:#FFFFFF; 
@@ -415,7 +461,7 @@ Deretter kun <span style="color: orange;"><strong>kr 6,63</strong> pr dag</span>
 <p><br></p>
 <p style="text-align: left;">Alt dette får du med abonnement på Aftenposten Digital:</p>
 <table class="product-table" style="border: 0;">
-<tbody>
+<tbody style="width:100%;">
 <tr>
 <td>Aftenposten+<br>
 <span class="subtext">Daglig digital utgave av Aftenposten, samt full oppdatering på alt som skjer gjennom døgnet – spesielt tilpasset lesing på nettbrett</span></td>
@@ -462,7 +508,7 @@ display: inline-block;">Ubegrenset tilgang til oppdaterte nyheter på mobil, net
 <a title="Studentabonnement på Aftenposten" href="https://kundesenter.aftenposten.no/kundeservice/student-aftenposten/">Se våre tilbud til studenter</a></p>
        </div>
 	   </article>
-							
+
       </div>
 					<span class="bl-icon bl-icon-close"></span>
 				</section>
@@ -473,7 +519,7 @@ display: inline-block;">Ubegrenset tilgang til oppdaterte nyheter på mobil, net
 					<div class="bl-content">
 						<h2 style="text-align: center;">Spørsmål og svar</h2>
 						<div style="height:2px; width:85%;border-bottom: 1px solid #e5e5e5; margin-bottom:10px;position: absolute;"></div>					
-							
+
 <p>&nbsp;</p>
 <h3>Hva er Aftenposten+?</h3>
 <p><strong>Aftenposten+</strong> er en spesialtilpasset applikasjon for iPad, iPhone og Android. Her får du alt innhold fra Aftenposten, presentert i et lekkert format som gir deg en eksklusiv og rolig leseopplevelse. <a title="Guide til Aftenposten+" href="https://kundesenter.aftenposten.no/aftenposten-pluss-info/">Om Aftenposten+</a></p>
@@ -523,12 +569,12 @@ Abonnementet administreres via din iTunes-konto. Når du abonnerer via iTunes ha
 					<div class="bl-content">
 						<h2 style="text-align: center;">Slik navigerer du i Aftenposten+</h2>
 						<article>
-<img  alt="guide" style="display: block;
+<div id="navigateImg" alt="guide" style="display: block;
     margin-left: auto;
-    margin-right: auto" src="https://kundesenter.aftenposten.no/wp-content/uploads/guide.png" width="90%" height="150%">
+    margin-right: auto" ></div>
 </article>     
 	 </div>
-					
+
 					<span class="bl-icon bl-icon-close"></span>
 				</section>
 				<section>
@@ -593,7 +639,7 @@ cursor: pointer;">Forbedringsforslag</a>
   <div class="box">
     <div class="box-body">
       <div class="editor-styles">
-	  
+
         <h2 style="text-align: center;">Andre apper fra Aftenposten</h2>
 <p style="text-align: center;">Tilgang til samtlige apper er inkludert i alle abonnement hos Aftenposten.</p>
 <p>&nbsp;</p>
@@ -604,7 +650,7 @@ cursor: pointer;">Forbedringsforslag</a>
 <p style="text-align: left;"><em><strong>Papiravisen i digitalt format</strong></em></p>
 <p style="text-align: left;">Svært mange er veldig glad i papiravisen. Her får du en digital kopi av papiravisen side for side &#8211; til bruk på mobil, nettbrett eller mac/pc.</p>
 
-<p style="text-align: right;"><a href="https://market.android.com/details?id=no.aftenposten.reader" target="_blank"><img class="alignnone size-full wp-image-1763" alt="Google-Play-40" src="https://kundesenter.aftenposten.no/wp-content/uploads/Google-Play-40.jpg" width="115" height="40" /></a> <a href="http://itunes.apple.com/no/app/id422554810" target="_blank"><img class="size-full wp-image-1737 alignnone" alt="Download_on_the_App_Store_Badge_NO_135x40_0824" src="https://kundesenter.aftenposten.no/wp-content/uploads/Download_on_the_App_Store_Badge_NO_135x40_0824.png" width="135" height="40" /></a></p>
+<p style="text-align: right;"><a href="https://market.android.com/details?id=no.aftenposten.reader" target="_blank"><img class="alignnone size-full wp-image-1763" alt="Google-Play-40" src="https://kundesenter.aftenposten.no/wp-content/uploads/Google-Play-40.jpg" id="btnGP1" width="115" height="40" /></a> <a href="http://itunes.apple.com/no/app/id422554810" target="_blank"><img id="btnAppStore1" class="size-full wp-image-1737 alignnone" alt="Download_on_the_App_Store_Badge_NO_135x40_0824" src="https://kundesenter.aftenposten.no/wp-content/uploads/Download_on_the_App_Store_Badge_NO_135x40_0824.png" width="135" height="40" /></a></p>
 <p>&nbsp;</p>
 </div>
 </div>
@@ -615,7 +661,7 @@ cursor: pointer;">Forbedringsforslag</a>
 <p style="text-align: left;"><strong><em>Tilgang til mer enn 150 år med Aftenposten</em></strong><br />
 Lær historien å kjenne gjennom Aftenpostens arkiv. Arkivet inneholder de aller fleste utgavene av Aftenposten – fra den første utgaven som kom ut 14.mai 1860 og frem til i dag! Dette er innhold du ikke finner på Google.</p>
 <p style="text-align: left;">Søk i arkivet i din nettleser (krever Adobe Flash Player)</p>
-<p style="text-align: right;"><a href="https://play.google.com/store/apps/details?id=no.aftenposten_arkiv.reader" target="_blank"><img class="alignnone size-full wp-image-1763" alt="Google-Play-40" src="https://kundesenter.aftenposten.no/wp-content/uploads/Google-Play-40.jpg" width="115" height="40" /></a> <a href="http://itunes.apple.com/no/app/id422554989" target="_blank"><img class="alignnone size-full wp-image-1737" alt="Download_on_the_App_Store_Badge_NO_135x40_0824" src="https://kundesenter.aftenposten.no/wp-content/uploads/Download_on_the_App_Store_Badge_NO_135x40_0824.png" width="135" height="40" /></a></p>
+<p style="text-align: right;"><a href="https://play.google.com/store/apps/details?id=no.aftenposten_arkiv.reader" target="_blank"><img id="btnGP2" class="alignnone size-full wp-image-1763" alt="Google-Play-40" src="https://kundesenter.aftenposten.no/wp-content/uploads/Google-Play-40.jpg" width="115" height="40" /></a> <a href="http://itunes.apple.com/no/app/id422554989" target="_blank"><img id="btnAppStore2" class="alignnone size-full wp-image-1737" alt="Download_on_the_App_Store_Badge_NO_135x40_0824" src="https://kundesenter.aftenposten.no/wp-content/uploads/Download_on_the_App_Store_Badge_NO_135x40_0824.png" width="135" height="40" /></a></p>
 <p>&nbsp;</p>
 </div>
 </div>
@@ -625,7 +671,7 @@ Lær historien å kjenne gjennom Aftenpostens arkiv. Arkivet inneholder de aller
 <h3 style="text-align: left;">A-magasinet på iPad</h3>
 <p style="text-align: left;"><strong><em>Aftenpostens populære helgemagasin, tilpasset for lesing på ipad</em></strong><br />
 A-magasinet leses ukentlig av mer enn 630 000 lesere! I A-magasinet finner du samfunnsaktuelle og engasjerende reportasjer fra innland og utland, samt velskrevne intervjuer og spalter.</p>
-<p style="text-align: right;"><a href="http://itunes.apple.com/no/app/id427164337" target="_blank"><img class="alignnone size-full wp-image-1737" alt="Download_on_the_App_Store_Badge_NO_135x40_0824" src="https://kundesenter.aftenposten.no/wp-content/uploads/Download_on_the_App_Store_Badge_NO_135x40_0824.png" width="135" height="40" /></a></p>
+<p style="text-align: right;"><a href="http://itunes.apple.com/no/app/id427164337" target="_blank"><img id="btnAppStore4" class="alignnone size-full wp-image-1737" alt="Download_on_the_App_Store_Badge_NO_135x40_0824" src="https://kundesenter.aftenposten.no/wp-content/uploads/Download_on_the_App_Store_Badge_NO_135x40_0824.png" width="135" height="40" /></a></p>
 <p>&nbsp;</p>
 </div>
 </div>
@@ -646,7 +692,7 @@ Aftenposten.no leser du i din nettleser &#8211; på mobil, nettbrett eller mac/p
 <h3 style="text-align: left;">Aftenpostens mobilapp</h3>
 <p style="text-align: left;"><strong><em>Bli varslet om viktige nyheter</em></strong><br />
 Med vår nyhetsapp på mobilen kan du holde deg oppdatert uansett hvor du er. Du kan velge å motta varsler om viktige nyhetshendelser, slik at du kan følge med når det skjer.</p>
-<p style="text-align: right;"><a href="https://play.google.com/store/apps/details?id=no.cita" target="_blank"><img class="alignnone size-full wp-image-1763" alt="Google-Play-40" src="http://kundesenter.aftenposten.no/wp-content/uploads/Google-Play-40.jpg" width="115" height="40" /></a> <a href="https://itunes.apple.com/no/app/aftenposten-for-iphone/id403509822" target="_blank"><img class="alignnone size-full wp-image-1737" alt="Download_on_the_App_Store_Badge_NO_135x40_0824" src="https://kundesenter.aftenposten.no/wp-content/uploads/Download_on_the_App_Store_Badge_NO_135x40_0824.png" width="135" height="40" /></a></p>
+<p style="text-align: right;"><a href="https://play.google.com/store/apps/details?id=no.cita" target="_blank"><img class="alignnone size-full wp-image-1763" alt="Google-Play-40" src="http://kundesenter.aftenposten.no/wp-content/uploads/Google-Play-40.jpg" id="btnGP3" width="115" height="40" /></a> <a href="https://itunes.apple.com/no/app/aftenposten-for-iphone/id403509822" target="_blank"><img class="alignnone size-full wp-image-1737" alt="Download_on_the_App_Store_Badge_NO_135x40_0824" src="https://kundesenter.aftenposten.no/wp-content/uploads/Download_on_the_App_Store_Badge_NO_135x40_0824.png" id="btnAppStore3" width="135" height="40" /></a></p>
 </div>
 </div>
       </div>
@@ -672,7 +718,7 @@ Med vår nyhetsapp på mobilen kan du holde deg oppdatert uansett hvor du er. Du
 			$(function() {
 				Boxlayout.init();
 			});
-			
+
 			$(document).ready(function() {
 				$("a.moreInfoTrigger").bind('click', function(e){
 /*
@@ -683,8 +729,8 @@ Med vår nyhetsapp på mobilen kan du holde deg oppdatert uansett hvor du er. Du
 				    e.preventDefault();
 				});	
 			}); 
-			
+
 		</script>
-	
+
 
 </body></html>
