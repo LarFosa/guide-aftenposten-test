@@ -1,0 +1,15 @@
+CACHE MANIFEST
+# v1 2011-08-14
+# This is another comment
+index.html
+js/boxlayout.js
+js/modernizr.custom.js
+css/component.css
+images/nyapp.png
+
+# Use from network if available
+NETWORK:
+
+
+# Fallback content
+FALLBACK:
