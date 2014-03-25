@@ -199,35 +199,35 @@ b {
 	margin-left: -20px;
 	display: block;
 	content: '';
-	background: url(../images/wizardSprite@2x.png) center -3px;
+	background: url(../images/wizardSprite@22x.png) center -3px;
 	background-size: 40px;
 }
 
 .bl-icon-navigation:before {
-	background: url(../images/wizardSprite@2x.png) center -100px;
+	background: url(../images/wizardSprite@22x.png) center -100px;
 	background-size: 40px;
 
 }
 .bl-icon-subscription:before {
-	background: url(../images/wizardSprite@2x.png) center -452px;
+	background: url(../images/wizardSprite@22x.png) center -452px;
 	background-size: 40px;
 }
 
 .bl-icon-sharing:before {
-	background: url(../images/wizardSprite@2x.png) center -223px;
+	background: url(../images/wizardSprite@22x.png) center -223px;
 	background-size: 40px;
 }
 
 .bl-icon-faq:before {
-	background: url(../images/wizardSprite@2x.png) center -685px;
+	background: url(../images/wizardSprite@22x.png) center -685px;
 	background-size: 40px;
 }
 .bl-icon-changelog:before {
-	background: url(../images/wizardSprite@2x.png) center -794px;
+	background: url(../images/wizardSprite@22x.png) center -794px;
 	background-size: 40px;
 }
 .bl-icon-close:before {
-	background: url(../images/wizardSprite@2x.png) center -337px;
+	background: url(../images/wizardSprite@22x.png) center -337px;
 	background-size: 40px;
 	top: 0;
 	opacity: 0.5;

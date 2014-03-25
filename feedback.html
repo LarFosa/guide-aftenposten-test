@@ -1,0 +1,438 @@
+﻿<html lang="en" mainfest="cache.appcache" class=" js no-touch cssanimations csstransitions js no-touch cssanimations csstransitions" style=""><head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+		<title>Guide for Ivy Engine</title>
+		<meta name="description" content="GUIDE TEMPLATE FOR IVY ENGINE">
+		<meta name="keywords" content="fullscreen layout, boxes, responsive, page transitions, css transitions, jquery, portfolio, template">
+		<meta name="author" content="Agens AS">
+		<link rel="stylesheet" type="text/css" href="css/component.css">
+		<script src="js/modernizr.custom.js"></script>
+
+		<script>
+function checkDevice() 
+{
+var ua = navigator.userAgent.toLowerCase();
+
+var isAndroid = ua.indexOf("android") > -1; 
+
+if ((ua.indexOf('iphone') != -1) || (ua.indexOf('ipod') != -1) || (ua.indexOf('ipad') != -1)) {
+	document.getElementById("btnGP1").style.visibility="hidden"; 
+	document.getElementById("btnGP2").style.visibility="hidden";
+	document.getElementById("btnGP3").style.visibility="hidden";
+}
+
+if(isAndroid){
+	document.getElementById("btnAppStore1").style.visibility="hidden";
+	document.getElementById("btnAppStore2").style.visibility="hidden";
+	document.getElementById("btnAppStore3").style.visibility="hidden";
+	document.getElementById("btnAppStore4").style.visibility="hidden";
+	}
+}
+</script>
+		
+		
+		
+		<style>
+  
+  
+  .wrap {
+max-width: 980px;
+width: 95%;
+margin: 0 auto;
+position: relative;
+}
+  
+  .box {
+background-color: #fff;
+margin-bottom: 1em;
+border-radius: 0.4em;
+box-shadow: 0 2px 0 rgba(0,0,0,0.1);
+overflow: hidden;
+position: relative;
+}
+
+.box .box-body {
+overflow: hidden;
+padding: 2em;
+}
+  
+  A:link {text-decoration: underline;
+  text-transform:capitalize;
+  	
+  }
+  
+  .product-table tr:nth-of-type(even) {
+background-color: #fcfcfc;
+}
+  
+  table tr {
+border-bottom: 1px solid #e5e5e5;
+}
+  
+  .product-table .true, .product-table .false {
+display: block;
+width: 34px;
+height: 34px;
+display: inline-block;
+vertical-align: middle;
+}
+  
+  table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+  table {
+width: 100%;
+border-radius: 0.4em;
+}
+  .product-table tr {
+line-height: 1.3;
+}
+  
+    .product-table .subtext {
+color: #7f7f7f;
+font-size: 0.75em;
+line-height: 1.4em;
+display: inline-block;
+}
+  .product-table td:first-of-type {
+padding: 0.4em;
+border-left: 0;
+text-align: left;
+width: 32%;
+}
+  
+    caption, th, td {
+text-align: left;
+font-weight: normal;
+}
+  
+[class*=grid-] {
+float: left;
+}
+  
+  div {
+display: block;
+}
+  
+ *, *:before, *:after {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+
+}
+  [class*=grid-] {
+float: left;
+}
+  
+  
+  
+  .bl-content { 
+padding-left: 10%;
+padding-right: 10%;
+}
+  
+
+
+  
+
+
+ 
+  p {
+  font-family:"proxima-nova",sans-serif;
+  }
+ 
+  
+
+
+
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+display: block;
+}
+  
+  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font: inherit;
+font-size: 100%;
+vertical-align: baseline;
+  }
+  
+  img {
+max-width: 100%;
+height: auto;
+}
+  .grid {
+overflow: hidden;
+padding-bottom: 2px;
+}
+  
+  .aligncenter, img.aligncenter {
+margin-right: auto;
+margin-left: auto;
+display: block;
+clear: both;
+}
+  
+    .product-table .true {
+background-image: url("images/true.svg");
+background-repeat: no-repeat;
+  }
+  caption, th, td {
+text-align: left;
+font-weight: normal;
+}
+  
+  .product-table .subtext {
+color: #7f7f7f;
+font-size: 0.75em;
+line-height: 1.4em;
+display: inline-block;
+}
+  .product-table td:first-of-type {
+padding: 0.4em;
+border-left: 0;
+text-align: left;
+width: 32%;
+}
+
+.product-table td, .product-table th {
+text-align: center;
+color: #1a1a1a;
+font-size: 1.125em;
+}
+  
+  table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+  .product-table tr {
+line-height: 1.3;
+}
+  
+  .product-table tr:nth-of-type(odd) {
+background-color: transparent;
+}
+  
+  .product-table tr:nth-of-type(even) {
+background-color: #fcfcfc;
+}
+  
+  table tr {
+border-bottom: 1px solid #e5e5e5;
+}
+  
+  .product-table .true, .product-table .false {
+display: block;
+width: 34px;
+height: 34px;
+display: inline-block;
+vertical-align: middle;
+}
+
+
+  
+@media (max-width: 1000px) {
+  #buyAbImage {
+	background:url('images/min-side-mobil-app.jpg');
+	background-size:100% auto;
+	width: 100%;
+	height: 100%;
+	background-repeat:no-repeat;
+	position: absolute;
+}
+
+ #buyAbImgContainer { 
+	width:100%;
+	height:25%;
+	position: relative;
+    padding-bottom: 100%;
+}
+
+#navigateImg { 
+	background:url("images/min-side-mobil-app.jpg");
+	background-size:100% auto;
+	background-repeat: no-repeat; 
+	width: 100%;
+	height: 100%;
+}
+
+.grid-3-4 {
+width: 100%;
+}
+
+#buyAbText {
+ width: 85%;
+}
+
+  .grid-1-4 {
+width: 90%;
+}
+
+#feedbackBtn {
+ width: 80%; 
+}
+
+.okimage{
+	background-image: url(images/true.svg);
+background-repeat: no-repeat;
+width: 34px;
+height: 34px;
+position: absolute;
+margin-top: 14px;
+  
+  }
+
+}
+
+
+@media (min-width: 1000px) {
+  #buyAbImage {
+	background:url("images/nyapp.png");
+
+background-size:100% 100%;
+background-repeat:no-repeat;
+width:100%;
+height:100%;}
+
+	#buyAbImgContainer {
+
+background-size:360px 270px;
+background-repeat:no-repeat;
+width:360px;
+height:270px;
+margin-top:10px;
+}
+
+#navigateImg { 
+	background:url("images//guide.png");
+	background-size:100% auto;
+	width: 100%;
+	height: 100%;
+}
+
+
+.okimage{
+	background-image: url(images/true.svg);
+background-repeat: no-repeat;
+width: 34px;
+height: 34px;
+position: absolute; 
+margin-top: 10px;
+  
+  }
+
+#buyAbText {
+ width: 55%;
+}
+
+#feedbackBtn {
+ width: 300px;
+}
+
+	  .grid-1-4 {
+	  	margin-left:10%;
+width: 320px;
+}
+
+	.grid-3-4 {
+width: 40%;
+}
+
+</style>
+
+
+	</head>
+	<body onload="checkDevice()"> 
+		<div class="container" style="height: 100%;
+font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue" ',="" helvetica,="" arial,="" "lucida="" grande",="" sans-serif;"="">	
+			<div class="bl-main bl-expand-item" id="bl-main">
+				
+				
+				
+				
+				<section class="bl-expand bl-expand-top">
+					<div class="bl-box">
+						<h2 class="bl-icon bl-icon-sharing">Tilbakemelding</h2>
+					</div>
+					<div class="bl-content">
+						<style><!--
+.guideButton {
+                width:300px; padding: 14px 30px 12px 30px; text-align:center; display: inline-block; 
+background:#2d86a6 ;color:#FFFFFF;    text-decoration:none; font-weight:lighter;font-family:'HelveticaNeue-Ultra-Light', 'Helvetica Neue Ultra Light', 'HelveticaNeue', 'Helvetica Neue'; font-stretch:normal; font-size: 1.125em; text-transform: none;  padding: 11px 0px 10px; border: none; cursor: pointer;" 
+                }
+.guideButton:active {
+background:#5ebddf;
+}
+--></style>
+<div align="center">
+<h2>Vi setter pris på din tilbakemelding!</h2>
+<p>Opplever du feil i appen, eller har du forslag til endringer eller forbedringer?<br>
+Vennligst ta kontakt, slik at vi kan forbedre oss!</p>
+<p><a id="feedbackBtn" href="mailto:even.teimansen@aftenposten.no?subject=Feilmelding, Aftenposten+" style="
+padding: 14px 30px 12px 30px;
+text-align: center;
+display: inline-block;
+background: #2d86a6;
+color: #FFFFFF;
+text-decoration: none;
+font-weight: lighter;
+font-family: 'HelveticaNeue-Ultra-Light', 'Helvetica Neue Ultra Light', 'HelveticaNeue', 'Helvetica Neue';
+font-stretch: normal;
+font-size: 1.125em;
+text-transform: none;
+padding: 11px 0px 10px;
+border: none;
+cursor: pointer;">Meld feil i appen</a></p>
+<p><a id="feedbackBtn" href="mailto:even.teimansen@aftenposten.no?subject=Forbedringsforslag, Aftenposten+" style="
+padding: 14px 30px 12px 30px;
+text-align: center;
+display: inline-block;
+background: #2d86a6;
+color: #FFFFFF;
+text-decoration: none;
+font-weight: lighter;
+font-family: 'HelveticaNeue-Ultra-Light', 'Helvetica Neue Ultra Light', 'HelveticaNeue', 'Helvetica Neue';
+font-stretch: normal;
+font-size: 1.125em;
+text-transform: none;
+padding: 11px 0px 10px;
+border: none;
+cursor: pointer;">Forbedringsforslag</a>
+</p>
+						</div>
+					</div>
+					
+				</section>
+				
+			</div>
+		</div><!-- /container -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/boxlayout.js"></script>
+		<script type="text/javascript">
+			/*  allow :active styles to work in your CSS on a page in Mobile Safari: */
+			document.addEventListener("touchstart", function(){}, true);
+
+			$(function() {
+				Boxlayout.init();
+			});
+
+			$(document).ready(function() {
+				$("a.moreInfoTrigger").bind('click', function(e){
+/*
+				    var toShow = $(this).attr('href');
+					$(toShow).stop().slideToggle('500');
+*/
+				    $(this).closest('.moreInfo').toggleClass('open');
+				    e.preventDefault();
+				});	
+			}); 
+
+		</script>
+
+
+</body></html>
