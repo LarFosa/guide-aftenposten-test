@@ -1,0 +1,35 @@
+CACHE MANIFEST
+# v1 2011-08-14
+# This is another comment
+index.html
+feedback.html
+faq.html
+js/boxlayout.js
+js/modernizr.custom.js
+css/component.css
+images/nyapp.png
+images/A-mag-paa-iPad-stort-bilde-300x216.png
+images/Arkiv-illustrasjon-min-side-300x233.jpeg
+images/DIGITAL-min-side-300x272.jpeg
+images/Download_on_the_App_Store_Badge_NO_135x40_0824.png
+images/eAvis-min-side-300x233.jpeg
+images/Google-Play-40.jpeg
+images/guide.png
+images/min-side-mobil-app.jpeg
+images/pluss_skjerm1.jpeg
+images/pluss_skjerm2.jpeg
+images/true.svg
+images/wizardSprite@22x.png
+fonts/icomoon.dev
+fonts/icomoon.eot
+fonts/icomoon.ttf
+fonts/icomoon.svg
+fonts/icomoon.woff
+fonts/license.txt
+
+# Use from network if available
+NETWORK:
+*
+
+# Fallback content
+FALLBACK:
