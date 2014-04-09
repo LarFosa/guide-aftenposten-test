@@ -1,8 +1,8 @@
-﻿<html lang="en" manifest="cache.appcache" class=" js no-touch cssanimations csstransitions" style=""><head>
+﻿<html lang="en" manifest="cache.appcache" class=" js no-touch cssanimations csstransitions js no-touch cssanimations csstransitions" style=""><head>
 		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">	 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
-		<title>Guide for Ivy Engine</title>
+		<title>Guide</title>
 		<meta name="description" content="GUIDE TEMPLATE FOR IVY ENGINE">
 		<meta name="keywords" content="fullscreen layout, boxes, responsive, page transitions, css transitions, jquery, portfolio, template">
 		<meta name="author" content="Agens AS">
@@ -10,32 +10,322 @@
 		<script src="js/modernizr.custom.js"></script>
 
 		<script>
-function checkDevice() 
+
+		function buySub() {
+				window.location.href = 'https://kundesenter.aftenposten.no/in-app-purchase/';
+		}
+		
+		
+		function checkDevice() 
 {
-var ua = navigator.userAgent.toLowerCase();
+var ua = navigator.userAgent.toLowerCase();  
 
 var isAndroid = ua.indexOf("android") > -1; 
 
-if ((ua.indexOf('iphone') != -1) || (ua.indexOf('ipod') != -1) || (ua.indexOf('ipad') != -1)) {
+
+if ((ua.indexOf('ipad') != -1)) {
 	document.getElementById("btnGP1").style.visibility="hidden"; 
 	document.getElementById("btnGP2").style.visibility="hidden";
 	document.getElementById("btnGP3").style.visibility="hidden";
+	 
+	 /*
+	 document.getElementById("buyAbImage").src="'images/ipad.png'"; 
+	 document.getElementById("navigateImg").src="'images/ipadnav.png'";
+	 document.getElementById("plussScreen1").src="'images/pluss_skjerm1.png'";
+	 document.getElementById("plussScreen2").src="'images/pluss_skjerm2.png'";
+	 */
+	 
+	document.getElementById("buyAbImage").style.backgroundImage="url('images/ipad.png')";
+	document.getElementById("navigateImg").style.backgroundImage="url('images/ipadnav.png')";
+	document.getElementById("plussScreen1").style.backgroundImage="url('images/pluss_skjerm1.jpg')";
+	document.getElementById("plussScreen2").style.backgroundImage="url('images/pluss_skjerm2.jpg')";
+	
+	document.getElementById("swipeDescription").style.visibility="visible";
 }
 
-if(isAndroid){
+else if ((ua.indexOf('iphone') != -1) || (ua.indexOf('ipod') != -1)) {
+	document.getElementById("btnGP1").style.visibility="hidden"; 
+	document.getElementById("btnGP2").style.visibility="hidden";
+	document.getElementById("btnGP3").style.visibility="hidden";
+	
+	document.getElementById("apmobilapp").style.backgroundImage="url('images/ios.png')";
+	document.getElementById("buyAbImage").style.backgroundImage="url('images/ios.png')";
+	document.getElementById("navigateImg").style.backgroundImage="url('images/iosnav.png')";
+	document.getElementById("plussScreen1").style.backgroundImage="url('images/payment1.png')";
+	document.getElementById("plussScreen2").style.backgroundImage="url('images/payment2.png')";
+	//document.getElementById("swipeDescription").style.visibility="hidden";
+}
+
+else if(isAndroid){
 	document.getElementById("btnAppStore1").style.visibility="hidden";
 	document.getElementById("btnAppStore2").style.visibility="hidden";
 	document.getElementById("btnAppStore3").style.visibility="hidden";
 	document.getElementById("btnAppStore4").style.visibility="hidden";
+	
+	document.getElementById("apmobilapp").style.backgroundImage="url('images/android.png')";
+	document.getElementById("buyAbImage").style.backgroundImage="url('images/android.png')";
+	document.getElementById("navigateImg").style.backgroundImage="url('images/androidnav.png')";
+	document.getElementById("plussScreen1").style.backgroundImage="url('images/payment1.png')";
+	document.getElementById("plussScreen2").style.backgroundImage="url('images/payment2.png')";
+	//document.getElementById("swipeDescription").style.visibility="hidden";
 	}
+else {
+	//document.getElementById("swipeDescription").style.visibility="hidden";
+}
 }
 </script>
-		
-		
-		
-		<style>
+<style>
   
-  
+  .clear {
+	clear: both;
+}
+
+form, fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.dialog {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 18px;
+    display: -webkit-box;
+    opacity: 0;
+    z-index: 99;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    -webkit-transform: translate3d(0, -100%, 0);
+	-webkit-transition: all .5s ease-out;
+	transition: all .5s ease-out;
+	background: rgba(255,255,255, .9);
+}
+
+.dialog.is-active {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+.dialog > div {
+    display: inline-block;
+    padding: 20px 40px;
+    border-radius: 4px;
+    color: #333;
+}
+
+.content {
+    margin: 0;
+    padding: 0 0 0 20px;
+    background: #F7F7F7;
+    border: 1px solid #e7e7e7;
+    box-shadow: inset 0px 1px 0px #FEFEFE;
+    border-bottom: 1px solid #ddd;
+    
+/*
+    border-left: 0;
+    border-right: 0;
+*/
+}
+
+.input {
+    clear: both;
+    position: relative;
+}
+
+.input-text input,
+.input-text textarea,
+input:-webkit-autofill {
+    background: transparent;
+    padding: 32px 0 5px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.5em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    border: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    border-radius: 0;
+	border-bottom: 1px solid #ddd;
+	vertical-align: bottom;
+    font-family: 'Open sans', Helvetica, Arial;
+	color: #333;
+	max-width: 100%;
+	-webkit-transition: min-height 0.3s ease;
+	transition: min-height 0.3s ease;
+}
+.input-text input:focus,
+.input-text textarea:focus {
+	border-bottom: 1px solid #00aeef;
+	outline: none;	
+}
+.input-text textarea {
+	margin: 32px 0 5px;
+	padding: 5px 0;
+}
+.input-text textarea:focus {
+	
+}
+
+.input-text input:active,
+.input-text textarea:active {
+	border-bottom: 1px solid #00aeef;
+}
+
+.btn {
+	background: none;
+	border: none;
+	position: relative;
+	display: block;
+    text-align: center;
+	font-weight: 400;
+    font-size: 16px;
+    padding: 12px 0;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	margin: 0;
+	color: #00aeef;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+/*
+.btn#btn-post-feedback {
+	margin: 20px 0;
+	padding: 10px 20px;
+	border: none;
+	float: right;
+	background: #00aeef;
+	color: #fff;
+	-webkit-appearance:none;
+	-webkit-border-radius:20px;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+*/
+
+.btn#btn-post-feedback {
+    background: #00aeef;
+	padding: 10px 30px 12px;
+    display: inline-block;
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+	font-size: 13px;
+	border: none;
+	color: #fff;
+	text-transform: uppercase;
+	font-style: normal;
+	border-radius: 4px;
+	margin: 20px 20px 25px;
+	width: auto;
+}
+.btn#btn-post-feedback:active {
+	margin: 22px 20px 20px;
+
+}
+.actions {
+	text-align: center;
+}
+
+
+.btn.icon {
+	padding-left: 40px;
+	text-align: left;
+}
+#btn-facebook {
+}
+#btn-twitter {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+.btn.icon:before {
+	content: '';
+	background: url(images/social_sprite.png) no-repeat center 10px transparent;
+	background-size: 25px;
+	width: 46px;
+	height: 44px;
+	left: -10px;
+	top: 50%;
+	margin-top: -22px;
+	position: absolute;
+}
+#btn-twitter:before {
+	background: url(images/social_sprite.png) no-repeat center -30px transparent;
+	background-size: 25px;
+}
+#btn-rate:before {
+	background: url(images/social_sprite.png) no-repeat center -68px transparent;
+	background-size: 25px;
+}
+
+.btn:active {
+    opacity: 0.8;
+    outline: none;
+}
+.btn:focus {
+	border-color: #00aeef;
+}
+
+#submit-error-label {
+	padding: 5px 0;
+	color: #C22727;
+	font-weight: 400;
+}
+
+label {
+	font-size: .8125em; /* 13/16 */ 
+	text-transform: uppercase;
+	position: absolute;
+	letter-spacing: 2px;
+	top: 10px;
+	left: 0;
+	color: #00aeef;
+	opacity: 1;
+	-webkit-transition: .333s ease top, .333s ease opacity;
+	transition: .333s ease top, .333s ease opacity;
+}
+
+/* Javascript classes
+   Used for modifying form fields
+==================================== */
+.js-hide-label label {
+	opacity: 0; 
+	top: 7px;
+}
+
+.js-unhighlight-label label {
+	color: #999
+}
+
+/* Bonus form valiation styles */
+.js-error {
+	border-color: #00aeef!important; /* override all cases */
+}
+.js-error + div {
+	border-top-color: #00aeef;
+}
+.js-error label {
+	color: #00aeef;
+}
+
+.creds {
+	width: 58px;
+	margin: 30px auto;
+}
+.creds img{
+	width: 100%;
+	height: auto;
+}
   .wrap {
 max-width: 980px;
 width: 95%;
@@ -57,7 +347,6 @@ overflow: hidden;
 }
   
   A:link {text-decoration: underline;
-  text-transform:capitalize;
   	
   }
   
@@ -237,28 +526,134 @@ vertical-align: middle;
   
 @media (max-width: 1000px) {
   #buyAbImage {
-	background:url('images/androidnav.png');
-	background-size:100% auto;
+	background:url('images/android.png');
+	background-size:100% auto; 
 	width: 100%;
 	height: 100%;
 	background-repeat:no-repeat;
 	position: absolute;
 }
 
+  #buyAbImage {
+	display:none;
+}
  #buyAbImgContainer { 
+	
+	display:none;
+}
+
+
+#buyAbImagePhone {
+	background:url('images/android.png');
+	background-size:100% auto; 
+	width: 100%;
+	height: 100%;
+	background-repeat:no-repeat;
+	position: absolute;
+}
+  #buyAbImgContainerPhone { 
 	width:100%;
 	height:25%;
 	position: relative;
     padding-bottom: 100%;
 }
 
-#navigateImg { 
-	background:url("images/androidnav.png");
+#buyAboutImage {
+	background:url('images/android.png');
+	background-size:100% auto; 
+	width: 100%;
+	height: 100%;
+	background-repeat:no-repeat;
+	position: absolute;
+}
+  #buyAboutImgContainer { 
+	width:100%;
+	height:25%;
+	position: relative;
+    padding-bottom: 100%;
+}
+
+#iframe {
+
+	visibility:visible;
+	display:block;
+	width:100%; 
+	height:auto; 
+	min-height:700px;
+}
+#iframecont {
+
+	visibility:visible;
+	display:block;
+	width:100%; 
+	height:auto; 
+	min-height:700px;
+}
+
+
+
+#navigateImg2 { 
+	background-image:url("images/android_swipe.png");
 	background-size:100% auto;
 	background-repeat: no-repeat; 
 	width: 100%;
-	height: 100%;
+	height: 700px;
+	max-height: 800px;
+	max-width: 900px;
 }
+
+#navigateImg { 
+	
+}
+
+#apmobilapp { 
+	background:url("images/android.png");
+	background-size:100% auto;
+	background-repeat: no-repeat; 
+	width: 270;
+	height: 250px;
+}
+
+
+
+#plussScreen1 { 
+	
+	 
+	background:url("images/payment1.png");
+	background-size:100% auto;
+	background-repeat: no-repeat; 
+	width: 100%;
+	height: 300;
+	max-height: 300;
+max-width: 300;
+
+
+}
+#plussScreen2 { 
+
+	 
+	background:url("images/payment2.png");
+	background-size:100% auto;
+	background-repeat: no-repeat; 
+	width: 100%;
+	height: 300;
+	max-height: 300;
+max-width: 300;
+
+
+}
+
+#plussScreen3 { 
+	background:url("images/shareAndroid.png");
+	background-size:100% auto;
+	background-repeat: no-repeat; 
+	width: 100%;
+	height: 380;
+	max-height: 380;
+	max-width: 208;
+
+}
+
 
 .grid-3-4 {
 width: 100%;
@@ -285,34 +680,271 @@ position: absolute;
 margin-top: 14px;
   
   }
+}
+
+@media   (device-width : 320px)
+    and (-webkit-min-device-pixel-ratio: 2) {  
+  #buyAbImage {
+	display:none;
+}
+ #buyAbImgContainer { 
+	
+	display:none;
+}
+
+
+#buyAbImagePhone {
+	background:url('images/ios.png');
+	background-size:100% auto; 
+	width: 100%;
+	height: 100%;
+	background-repeat:no-repeat;
+	position: absolute;
+}
+ #buyAbImgContainerPhone { 
+	width:100%;
+	height:25%;
+	position: relative;
+    padding-bottom: 100%;
+}
+
+#buyAboutImage {
+	background:url('images/ios.png');
+	background-size:100% auto; 
+	width: 100%;
+	height: 100%;
+	background-repeat:no-repeat;
+	position: absolute;
+}
+ #buyAboutImgContainer { 
+	width:100%;
+	height:25%;
+	position: relative;
+    padding-bottom: 100%;
+}
+
+#iframe {
+
+	visibility:hidden;
+	display:gone;
+}
+#iframecont {
+	visibility:hidden;
+	display:gone;
+	width:100%; 
+	height:0vw; 
+	min-height:0vw;
+}
+
+#navigateImg2 { 
+	background-image:url("images/iphone_swipe.png");
+	background-size:100% auto;
+	background-repeat: no-repeat; 
+	width: 100%;
+	height: 700px;
+	max-height: 800px;
+	max-width: 900px;
+}
+
+
+
+#apmobilapp { 
+	background:url("images/ios.png");
+	background-size:100% auto;
+	background-repeat: no-repeat; 
+	width: 200px;
+	height: 250px;
+}
+
+#navigateImg { 
+	background:url("images/iosnav.png");
+	background-size:100% auto;
+	background-repeat: no-repeat; 
+	width: 100%;
+	height: 300px;
+}
+
+#plussScreen1 { 
+	background:url("images/payment1.png");
+	background-size:100% auto;
+	background-repeat: no-repeat; 
+	width: 100%;
+	height: 210;
+	
+}
+#plussScreen2 { 
+	background:url("images/payment2.png");
+	background-size:100% auto;
+	background-repeat: no-repeat; 
+	width: 100%;
+	height: 210;
+}
+
+#plussScreen3 { 
+	background:url("images/shareAndroid.png");
+	background-size:100% auto;
+	background-repeat: no-repeat; 
+	width: 100%;
+	height: 340;
+	max-height: 340;
+	max-width: 360;
+}
+
+.grid-3-4 {
+width: 100%;
+}
+
+#buyAbText {
+ width: 90%;
+ float: left;
+}
+
+  .grid-1-4 {
+width: 90%;
+}
+ 
+#feedbackBtn {
+ width: 80%; 
+}
+
+.okimage{
+	background-image: url(images/true.svg);
+background-repeat: no-repeat;
+width: 34px;
+height: 34px;
+position: absolute;
+margin-top: 14px;
+  
+  }
 
 }
 
 
 @media (min-width: 1000px) {
   #buyAbImage {
-	background:url("images/ipadnav.png");
+	background:url("images/ipad.png");
 
-background-size:100% auto;
+	
+	
+	background-size:100% auto;
+	background-repeat:no-repeat;
+	width:100%;
+	height:100%;
+}
+
+  #buyAboutImage {
+	background:url("images/ipad.png");
+
+	
+	
+	background-size:100% auto;
+	background-repeat:no-repeat;
+	width:100%;
+	height:100%;
+}
+
+
+#buyAboutImgContainer {
+
+background-size:650px 500px;
 background-repeat:no-repeat;
-width:100%;
-height:100%;}
+width:35%;
+height:500px;
+margin:auto;
+margin-top:10px;
+}
+
+
+
+
+
+#apmobilapp { 
+	background:url("images/android.png");
+	background-size:90% auto;
+	background-repeat: no-repeat; 
+	width: 90%;
+	height: 90%;
+}
+
 
 	#buyAbImgContainer {
 
 background-size:650px 500px;
 background-repeat:no-repeat;
-width:650px;
+width:35%;
 height:500px;
+margin:auto;
 margin-top:10px;
 }
 
-#navigateImg { 
-	background:url("images/ipadnav.png");
+#iframe {
+
+	visibility:hidden;
+	display:none;
+}
+#iframecont {
+
+	visibility:hidden;
+	display:none;
+}
+
+#buyAbImagePhone {
+	display:none;
+}
+  #buyAbImgContainerPhone { 
+	display:none;
+}
+
+
+#navigateImg2 { 
+	background-image:url("images/ipad_swipe.png");
 	background-size:100% auto;
 	background-repeat: no-repeat; 
 	width: 100%;
-	height: 100%;
+	height: 700px;
+	max-height: 800px;
+	max-width: 900px;
+}
+
+
+#navigateImg { 
+	background-image:url("images/ipadnav.png");
+	background-size:100% auto;
+	background-repeat: no-repeat; 
+	width: 100%;
+	height: 700px;
+	max-height: 800px;
+	max-width: 900px;
+}
+
+#plussScreen1 { 
+	background:url("images/pluss_skjerm1.jpg");
+	background-size:100% auto;
+	background-repeat: no-repeat; 
+	width: 100%;
+	height: 600px;
+	max-height:700;
+	max-width:700;
+}
+#plussScreen2 { 
+	background:url("images/pluss_skjerm2.jpg");
+	background-size:100% auto;
+	background-repeat: no-repeat; 
+	width: 100%;
+	height: 600px;
+	
+	max-height:700;
+	max-width:700;
+}
+#plussScreen3 { 
+	background:url("images/shareiPad.png");
+	background-size:100% auto;
+	background-repeat: no-repeat; 
+	width: 100%;
+	height: 600px;
+	
+	max-height:700;
+	max-width:700;
 }
 
 
@@ -327,7 +959,7 @@ margin-top: 10px;
   }
 
 #buyAbText {
- width: 100%;
+ width: 60%;
 }
 
 #feedbackBtn {
@@ -349,8 +981,7 @@ width: 40%;
 	</head>
 	<body onload="checkDevice()"> 
 		<div class="container" style="height: 100%;
-font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue"', 
-  Helvetica, Arial, "Lucida Grande", sans-serif;" >	
+font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue" ',="" helvetica,="" arial,="" "lucida="" grande",="" sans-serif;"="">	
 			<div id="bl-main" class="bl-main">
 				<section>
 					<div class="bl-box">
@@ -364,16 +995,15 @@ font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue"',
 
 
 
-							<div id="buyAbImgContainer" style="float:left;">
-							<div id="buyAbImage" class="attachment-full wp-post-image" alt="Aftenposten+"
-							style="float:left;"></div>
+							<div id="buyAboutImgContainer" style="float:left;">
+							<div id="buyAboutImage" class="attachment-full wp-post-image" alt="Aftenposten+" style="float:right;"></div>
 							</div>
 
 
 
 
-							<div id="buyAbText" style="margin-left:10px; position: relative; float:left;">
-						<h3 >Velkommen til Aftenposten+!</h3>
+							<div id="buyAbText" style="margin-left:10px; position: relative; float:right;">
+						<h3>Velkommen til Aftenposten+</h3>
 						<h4 style="font-size: 1.2em; line-height: 1.2;
 font-weight: 600; margin-bottom: 0.5em;">Aftenposten+ er spesialtilpasset for iPad, iPhone og Android. Her får du alt innhold fra Aftenposten, presentert i et lekkert format som gir deg en eksklusiv og rolig leseopplevelse.</h4>
 <p>Aftenposten+ er inkludert i alle abonnement på Aftenposten.</p>
@@ -383,19 +1013,21 @@ font-weight: 600; margin-bottom: 0.5em;">Aftenposten+ er spesialtilpasset for iP
 <p>Under «Dagens avis» finner du alltid sist publiserte avisutgave. I vårt utgavearkiv kan du finne og lese alle avisutgavene vi har publisert i applikasjonen.</p>
 <h3>Nyhetsbildet nå</h3>
 <p>Under «Nyhetsbildet nå» får du alltid siste nytt, prioritert og formidlet av Aftenposten. Denne delen av applikasjonen gir deg tilgang til alt vi publiserer på Aftenposten.no, designet og tilrettelagt for nettbrett og mobil.</p>
-<p>Under seksjonen «Forsiden» får du de mellom 80 og 90 artiklene som til enhver tid finnes på forsiden av Aftenposten.no, og sortert ut fra de samme prioriteringene.</p>
+<p>Under seksjonen «Nyhetsbildet nå» får du de mellom 80 og 90 artiklene som til enhver tid finnes på forsiden av Aftenposten.no, og sortert ut fra de samme prioriteringene.</p>
 <p>Under de enkelte seksjonene, som «Verden» eller «Meninger», får du de siste 25 publiserte artiklene innenfor seksjonen. De enkelte seksjonene kan leses isolert, enten med sveiping/blaing mellom artiklene fra start til slutt, eller inn og ut mellom artikler og seksjonsforside, alt etter dine egne preferanser.</p>
-<p>Foretrekker du å få oversikt over nyhetsbildet basert på forsidene våre, så kan du her sveipe deg gjennom både forsiden og videre gjennom alle seksjonsforsidene, fra ett og samme sted. Det har aldri før vært så lett å få oversikt.</p>
+<p>Ønsker du å få et kjapt overblikk over nyhetsbildet, kan du sveipe deg nedover forsiden på "Nyhetsbildet nå", og deretter evtentuelt forsette  inn i de ulike seksjonene.</p>
 <h3>Anbefalt</h3>
 <p>Vi i Aftenposten mener at alt vi publiserer er verdt å lese. Det er likevel enkelte av våre artikler vi synes er ekstra lesverdige. Det kan være at de er arbeidet med langt utover det vanlige, at de er usedvanlig velskrevne, eller at det er noe ved dem som gjør at vi veldig gjerne vil presentere dem for en ekstra stor leserskare. Disse artiklene prøver vi å synliggjøre ekstra godt ved å plassere dem i seksjonen «Anbefalt», og la dem leve litt lengre på «hjemskjermen» enn andre.</p>
-<p>Ofte vil disse være lange artikler som går virkelig i dybden på et tema, andre ganger kan det være andre kriterier som er lagt til grunn. Men én ting er sikkert: Alt vi presenterer her vil være vel verdt å lese, så sett gjerne av litt ekstra tid, når du tar turen innom «Anbefalt».<br>
-Tilgang til Aftenposten+ er inkludert i alle abonnement på Aftenposten.</p>
-<p><strong><a title="Navigasjonsguide" href="https://kundesenter.aftenposten.no/aftenposten-pluss-guide/">Slik navigerer du i appen</a></strong></p>
+<p>Ofte vil disse være lange artikler som går virkelig i dybden på et tema, andre ganger kan det være andre kriterier som er lagt til grunn. Men én ting er sikkert: Alt vi presenterer her vil være vel verdt å lese, så sett gjerne av litt ekstra tid, når du tar turen innom «Anbefalt».<br></p>
+<p><strong><a title="Navigasjonsguide" href="http://mm.aftenposten.no/projects/apmobil/ivyguide/index.html?page=3">Slik navigerer du i appen</a></strong></p>
+<p><strong><a title="Navigasjonsguide" href="https://kundesenter.aftenposten.no/kundeservice/betingelser-og-vilkar/personvernpolicy/">Aftenpostens personvernpolicy</a></strong></p>
+
+
+
 <p>&nbsp;</p>
 <p>Ansvarlig redaktør: <a href="mailto:espen.egil.hansen@aftenposten.no">Espen Egil Hansen</a><br>
-Nyhetsredaktør: <a href="mailto:kjetil.kolsrud@aftenposten.no">Kjetil Kolsrud</a> (konst.)<br>
+Nyhetsredaktør: <a href="mailto:hakon.borud@aftenposten.no">Håkon Borud</a> (konst.)<br>
 Politisk redaktør: <a href="mailto:harald.stanghelle@aftenposten.no">Harald Stanghelle</a><br>
-Utviklingsredaktør: <a href="mailto:skjalg.engebo@aftenposten.no">Skjalg Engebø</a><br>
 Adm. dir.: <a href="mailto:sondre.gravir@aftenposten.no">Sondre Gravir</a><br>
 Adm. dir. Aftenposten mobil: <a href="mailto:anette.mellbye@aftenposten.no">Anette Mellbye</a></p>
 <p>Hjemmeside: <a href="http://www.aftenposten.no/">http://www.aftenposten.no/</a></p>
@@ -417,7 +1049,7 @@ Telefon: 907 10 591<br>
 					</div>
 					<span class="bl-icon bl-icon-close"></span>
 				</section>
-				<section>
+				<section onclick="buySub()">
 					<div class="bl-box">
 						<h2 class="bl-icon bl-icon-subscription">Kjøp abonnement</h2>
 					</div>
@@ -431,22 +1063,21 @@ Telefon: 907 10 591<br>
 
 							<div style="border-bottom: 1px solid #e5e5e5; margin-bottom:10px;position: fixed;"></div>					
 
-							<div id="buyAbImgContainer" style="float:left;">
-							<div width="100%" id="buyAbImage" class="attachment-full wp-post-image" alt="Aftenposten+" height="100%"
-							style="float:left;"></div>
+							
+
+<div id="buyAbImgContainer" style="float:left;">
+							<div width="100%" id="buyAbImage" class="attachment-full wp-post-image" alt="Aftenposten+" height="100%" style="float:right;"></div>
 							</div>
 
 
-
-
-							<div id="buyAbText" style="margin-left:10px; position: relative; float:left;">
+							<div id="buyAbText" style="margin-left:10px; position: relative; float:right;">
 							<p>Full tilgang til alt fra Aftenposten – inkludert vår nye app <strong>Aftenposten+</strong>. Daglig digital utgave av Aftenposten, samt full oppdatering på alt som skjer gjennom døgnet i én og samme app!</p>
-<p><a href="http://kundewebtest.aftenposten.no/bestilling/skjema.htm?id=251&amp;utm_source=pluss&amp;utm_medium=button&amp;utm_content=digital&amp;utm_campaign=inapp" style="color:#FFFFFF; 
+<p><a href="https://kundeweb.aftenposten.no/bestilling/skjema.htm?id=251&amp;referer=wp_inapp&amp;utm_source=pluss&amp;utm_medium=button&amp;utm_content=digital&amp;utm_campaign=inapp" style="color:#FFFFFF; 
 background-color: #13a8e6;
 box-shadow: 0 4px 0 #1081b1;
 margin-bottom: 10px;
 font-size: 1.125em;
-padding: 14px 30px 12px 30px;
+padding: 10px 15px 10px 15px;
 border-radius: 4px;
 font-weight: 400;
 text-transform: uppercase;
@@ -455,7 +1086,7 @@ color: #fff;
 display: inline-block;
 border: none;
 cursor: pointer;
--webkit-appearance: none;">Bli abonnent nå (STAGE)!</a></p>
+-webkit-appearance: none;">Kjøp abonnement</a></p>
 <p style="text-align:left; font-size:15pt;"><strong>Første måned kr 1,-</strong><br>
 Deretter kun <span style="color: orange;"><strong>kr 6,63</strong> pr dag</span></p>
 <p><br></p>
@@ -465,7 +1096,7 @@ Deretter kun <span style="color: orange;"><strong>kr 6,63</strong> pr dag</span>
 <tr>
 <td>Aftenposten+<br>
 <span class="subtext">Daglig digital utgave av Aftenposten, samt full oppdatering på alt som skjer gjennom døgnet – spesielt tilpasset lesing på nettbrett</span></td>
-<td width="5%"><span class="okimage"></span></td>
+<td width="15%"><span class="okimage"></span></td>
 </tr>
 <tr>
 <td>aftenposten.no<br>
@@ -506,7 +1137,13 @@ display: inline-block;">Ubegrenset tilgang til oppdaterte nyheter på mobil, net
 <h4>Student?</h4>
 <p>Som student får du <strong>50% rabatt</strong> på alle våre abonnement! Du får selvfølgelig også A-kortet som gir deg rabatter og spesialtilbud på konserter, forestillinger, reiser og mye mer.<br>
 <a title="Studentabonnement på Aftenposten" href="https://kundesenter.aftenposten.no/kundeservice/student-aftenposten/">Se våre tilbud til studenter</a></p>
-       </div>
+       
+	   
+			<div id="buyAbImgContainerPhone" style="float:left;">
+							<div width="100%" id="buyAbImagePhone" class="attachment-full wp-post-image" alt="Aftenposten+" height="100%" style="float:right;"></div>
+							</div>
+	   
+			</div>
 	   </article>
 
       </div>
@@ -516,14 +1153,25 @@ display: inline-block;">Ubegrenset tilgang til oppdaterte nyheter på mobil, net
 					<div class="bl-box">
 						<h2 class="bl-icon bl-icon-faq">Spørsmål og svar</h2>
 					</div>
-					<div class="bl-content">
+					<div class="bl-content"> 
 						<h2 style="text-align: center;">Spørsmål og svar</h2>
 						<div style="height:2px; width:85%;border-bottom: 1px solid #e5e5e5; margin-bottom:10px;position: absolute;"></div>					
 
 <p>&nbsp;</p>
 <h3>Hva er Aftenposten+?</h3>
-<p><strong>Aftenposten+</strong> er en spesialtilpasset applikasjon for iPad, iPhone og Android. Her får du alt innhold fra Aftenposten, presentert i et lekkert format som gir deg en eksklusiv og rolig leseopplevelse. <a title="Guide til Aftenposten+" href="https://kundesenter.aftenposten.no/aftenposten-pluss-info/">Om Aftenposten+</a></p>
+<p><strong>Aftenposten+</strong> er en spesialtilpasset applikasjon for iPad, iPhone og Android. Her får du alt innhold fra Aftenposten, presentert i et lekkert format som gir deg en eksklusiv og rolig leseopplevelse. <a title="Guide til Aftenposten+" href="http://mm.aftenposten.no/projects/apmobil/ivyguide/index.html?page=0">Om Aftenposten+</a></p>
 <p>&nbsp;</p>
+
+<h3>Hvordan deler jeg artikler fra Aftenposten+?</h3>
+<p>Når du leser en artikkel du har lyst til å dele, trykker du på delesymbolet øverst i høyre hjørne, og delemenyen vil åpne seg. Velg deretter hvor eller hvordan du ønsker å dele den. Du kan for eksempel dele på Twitter eller Facebook, evt. også via mail. Dersom du ikke har brukt denne funksjonaliteten tidligere, blir du bedt om å oppgi påloggingsdetaljer for flere av kanalene du ønsker å dele i, for eksempel Facebook og Twitter. 
+</p>
+
+<div class="aligncenter size-full wp-image-3726" id="plussScreen3" alt="pluss_skjerm3"></div>
+
+<p>&nbsp;</p>
+
+
+
 <h3>Jeg abonnerer allerede på Aftenposten – hvordan får jeg tilgang til Aftenposten+?</h3>
 <p>Som Aftenposten-abonnent&nbsp;<strong></strong>har du allerede tilgang til alle Aftenpostens digitale produkter – inkludert <strong>Aftenposten+</strong>. Dette gjelder uansett hvilken type abonnement du har. Det eneste du trenger å gjøre, er å logge deg inn i appen med ditt SPiD-brukernavn og passord.</p>
 <p>Dersom du ikke har en SPiD-bruker, kan du enkelt opprette dette <a href="https://kundesenter.aftenposten.no/kundeservice/kom-i-gang/">her</a>.</p>
@@ -532,13 +1180,13 @@ display: inline-block;">Ubegrenset tilgang til oppdaterte nyheter på mobil, net
 <p>For å få tilgang til <strong>Aftenposten+</strong> må du ha et aktivt abonnement hos Aftenposten<strong>.<br>
 </strong></p>
 <p>Når du klikker deg inn på en artikkel i appen, og ikke er logget inn, får du opp en side hvor du kan logge inn, eller velge å bli abonnent:</p>
-<img class="aligncenter size-full wp-image-3724" alt="pluss_skjerm1" src="images/pluss_skjerm1.jpg" width="90%" height="140%">
+<div class="aligncenter size-full wp-image-3724" id="plussScreen1" alt="pluss_skjerm1"></div>
 <p>Om du velger <em>Bli abonnent</em>, har du mulighet til å<strong> </strong>kjøpe abonnement på følgende alternative måter:</p>
-<img class="aligncenter size-full wp-image-3726" alt="pluss_skjerm2" src="images/pluss_skjerm2.jpg" width="90%" height="140%">
-<p><strong>(1) Kjøp abonnement hos Aftenpostens<br>
+<div class="aligncenter size-full wp-image-3726" id="plussScreen2" alt="pluss_skjerm2"></div> 
+<p><strong>(1) Kjøp abonnement hos Aftenposten<br>
 </strong>Abonnement kjøpt via Aftenpostens kundesider gir tilgang til alle Aftenpostens digitale produkter – inkludert ubegrenset tilgang til aftenposten.no. Alle abonnement kjøpt via Aftenposten gir også tilgang til A-kortet – vårt fordelsprogram for abonnenter med eksklusive tilbud på arrangementer innen kultur, reise, sport og fritid.<br>
 <a title="Kjøp abonnement" href="https://kundesenter.aftenposten.no/in-app-purchase/">Kjøp abonnement</a></p>
-<p><strong>(2) Kjøp abonnement via iTunes<br>
+<p><strong>(2) Kjøp abonnement via iTunes<br> 
 </strong>Abonnement kjøpt via iTunes App Store gir kun tilgang til Aftenposten+.<br>
 Abonnementet administreres via din iTunes-konto. Når du abonnerer via iTunes har Aftenposten dessverre begrenset mulighet til å gi deg kundeservice, da kundeforholdet i dette tilfellet opprettes mellom deg som bruker og Apple iTunes App Store.</p>
 <p>&nbsp;</p>
@@ -549,16 +1197,19 @@ Abonnementet administreres via din iTunes-konto. Når du abonnerer via iTunes ha
 <p>SPiD (Schibsted Payment ID) er en felles innloggings- og betalingsløsning for tjenester fra Schibsted. SPiD tilbyr en enkel måte å logge inn på, og du kan logge inn med samme brukernavn og passord på Aftenposten, VG, finn.no og noen andre selskaper.</p>
 <p>&nbsp;</p>
 <h3>Hvordan sier jeg opp mitt abonnement?</h3>
-<p>Dersom du abonnerer på Aftenposten Digital (har kjøpt abonnement via Aftenposten) kan si opp ditt abonnement ved å benytte kontaktskjemaet på <a title="Min side" href="https://kundesenter.aftenposten.no/minside/">Min side</a>, eller ringe oss på telefon 05040.</p>
+<p>Dersom du abonnerer på Aftenposten (har kjøpt et abonnement via Aftenposten) kan du si opp ditt abonnement ved å benytte kontaktskjemaet på <a title="Min side" href="https://kundesenter.aftenposten.no/minside/">Min side</a>, eller ringe oss på telefon 05040.</p>
 <p>Dersom du har et abonnement på Aftenposten+ via iTunes, må du avslutte ditt abonnement fra din iTunes-konto.</p>
 <p>&nbsp;</p>
-<h3>Jeg har et forslag til hvordan appen kan gjøres enda bedre – hvor henvender jeg meg?</h3>
-<p><a title="Gi tilbakemelding her" href="https://kundesenter.aftenposten.no/aftenposten-pluss-tilbakemelding/">Gi tilbakemelding</a></p>
+
+
+
+<h3>Jeg har et forbedringforslag til appen – hvor henvender jeg meg?</h3>
+<p><a title="Gi tilbakemelding her" href="http://mm.aftenposten.no/projects/apmobil/ivyguide/index.html?page=4">Gi tilbakemelding</a></p>
 <p>&nbsp;</p>
 <h3>Jeg har et spørsmål som ikke er besvart her – hva gjør jeg?</h3>
 <p>Ta kontakt med vårt kundesenter på tlf 05040, eller via epost til <a href="mailto:abonnement@aftenposten.no?subject=Aftenposten+">abonnement@aftenposten.no</a>, så hjelper vi deg gjerne.</p>
 <p>&nbsp;</p>
-</article>
+
       </div>
 					<span class="bl-icon bl-icon-close"></span>
 				</section>
@@ -569,9 +1220,27 @@ Abonnementet administreres via din iTunes-konto. Når du abonnerer via iTunes ha
 					<div class="bl-content">
 						<h2 style="text-align: center;">Slik navigerer du i Aftenposten+</h2>
 						<article>
-<div id="navigateImg" alt="guide" style="display: block;
-    margin-left: auto;
-    margin-right: auto" ></div>
+
+						<h3></h3><br> 
+<p><b style="font-weight: bold;">Aftenposten+ - tre i en</b>: <b style="font-weight: bold;">Anbefalte artikler</b>, de aller beste artiklene fra Aftenposten, <b style="font-weight: bold;">Dagens avis</b>, som gir deg mulighet til å lese og bla igjennom papiravisens artikler, og <b style="font-weight: bold;">Nyhetsbildet nå</b>, de løpende nyhetene. 
+Via hjemskjermen som du ser nedenfor får du tilgang til alt innholdet.<br><br>
+						
+	</p><div id="navigateImg" alt="guide" style="display: block;
+		margin-left: auto;
+		margin-right: auto">
+	</div>  
+	
+	<div id="iframecont">
+		<object id="iframe" scrolling="no" data="http://mm.aftenposten.no/projects/apmobil/ivyguide/hotspot/"></object>
+	</div>
+	
+	
+
+<div id="swipeDescription" style="margin-top:20px;">  
+<b>Enkel å lese</b>. Når du kommer inn på en artikkelside, kan du bla eller sveipe deg videre til neste artikkel. <p></p>
+
+<div id="navigateImg2" alt="guide"></div>
+</div>
 </article>     
 	 </div>
 
@@ -582,51 +1251,48 @@ Abonnementet administreres via din iTunes-konto. Når du abonnerer via iTunes ha
 						<h2 class="bl-icon bl-icon-sharing">Tilbakemelding</h2>
 					</div>
 					<div class="bl-content">
-						<style><!--
-.guideButton {
-                width:300px; padding: 14px 30px 12px 30px; text-align:center; display: inline-block; 
-background:#2d86a6 ;color:#FFFFFF;    text-decoration:none; font-weight:lighter;font-family:'HelveticaNeue-Ultra-Light', 'Helvetica Neue Ultra Light', 'HelveticaNeue', 'Helvetica Neue'; font-stretch:normal; font-size: 1.125em; text-transform: none;  padding: 11px 0px 10px; border: none; cursor: pointer;" 
-                }
-.guideButton:active {
-background:#5ebddf;
-}
---></style>
-<div align="center">
-<h2>Vi setter pris på din tilbakemelding!</h2>
-<p>Opplever du feil i appen, eller har du forslag til endringer eller forbedringer?<br>
+						
+							<p style="text-align: center;">
+
+Opplever du feil med appen, eller har du forlag til endringer eller forbedringer? <br>
 Vennligst ta kontakt, slik at vi kan forbedre oss!</p>
-<p><a id="feedbackBtn" href="mailto:even.teimansen@aftenposten.no?subject=Feilmelding, Aftenposten+" style="
-padding: 14px 30px 12px 30px;
-text-align: center;
-display: inline-block;
-background: #2d86a6;
-color: #FFFFFF;
-text-decoration: none;
-font-weight: lighter;
-font-family: 'HelveticaNeue-Ultra-Light', 'Helvetica Neue Ultra Light', 'HelveticaNeue', 'Helvetica Neue';
-font-stretch: normal;
-font-size: 1.125em;
-text-transform: none;
-padding: 11px 0px 10px;
-border: none;
-cursor: pointer;">Meld feil i appen</a></p>
-<p><a id="feedbackBtn" href="mailto:even.teimansen@aftenposten.no?subject=Forbedringsforslag, Aftenposten+" style="
-padding: 14px 30px 12px 30px;
-text-align: center;
-display: inline-block;
-background: #2d86a6;
-color: #FFFFFF;
-text-decoration: none;
-font-weight: lighter;
-font-family: 'HelveticaNeue-Ultra-Light', 'Helvetica Neue Ultra Light', 'HelveticaNeue', 'Helvetica Neue';
-font-stretch: normal;
-font-size: 1.125em;
-text-transform: none;
-padding: 11px 0px 10px;
-border: none;
-cursor: pointer;">Forbedringsforslag</a>
-</p>
-						</div>
+	 
+  
+
+<form method="post" action="sendFeedback.php" class="content form" id="feedback">
+	    <div class="input input-text">
+	        <label style="
+    text-align: center;
+    font-weight: 700;
+    display: block;     
+    position: relative;
+" for="name">Navn</label>
+	        <input type="text" name="name" placeholder="" class="no-border" style="text-align: center">
+	    </div>
+	    <div class="input input-text">
+			<label style="
+    text-align: center;
+    font-weight: 700;
+    display: block;     
+    position: relative;
+" for="name">Epost-adresse</label>
+	        <input type="email" name="email" placeholder="" style="text-align: center">
+	        <span id="submit-error-label" style="display:none;"></span>
+	    </div>
+	    <div class="input input-text">
+			<label style="
+    text-align: center;
+    font-weight: 700;
+    display: block;     
+    position: relative;
+" for="message">Melding</label>
+	        <textarea name="feedback" class="feedback" placeholder="" style="text-align: center"></textarea>
+	    </div> 
+	    <div class="actions" style="margin-bottom: 100px;">
+	        <input type="submit" class="btn input-border" id="btn-post-feedback" value="Send melding">
+	    </div>
+	    <div class="clear"></div>
+	</form>
 					</div>
 					<span class="bl-icon bl-icon-close"></span>
 				</section>
@@ -644,55 +1310,55 @@ cursor: pointer;">Forbedringsforslag</a>
 <p style="text-align: center;">Tilgang til samtlige apper er inkludert i alle abonnement hos Aftenposten.</p>
 <p>&nbsp;</p>
 <div class="grid">
-<div class="grid-1-4"><img class="aligncenter size-medium wp-image-1561" alt="eAvis-min-side" src="images/eAvis-min-side-300x233.jpg" width="300" height="233" /></div>
+<div class="grid-1-4"><img class="aligncenter size-medium wp-image-1561" alt="eAvis-min-side" src="images/eAvis-min-side-300x233.jpg" width="300" height="233"></div>
 <div class="grid-3-4">
 <h3 style="text-align: left;">Aftenposten eAvis</h3>
 <p style="text-align: left;"><em><strong>Papiravisen i digitalt format</strong></em></p>
-<p style="text-align: left;">Svært mange er veldig glad i papiravisen. Her får du en digital kopi av papiravisen side for side &#8211; til bruk på mobil, nettbrett eller mac/pc.</p>
+<p style="text-align: left;">Svært mange er veldig glad i papiravisen. Her får du en digital kopi av papiravisen side for side – til bruk på mobil, nettbrett eller mac/pc.</p>
 
-<p style="text-align: right;"><a href="https://market.android.com/details?id=no.aftenposten.reader" target="_blank"><img class="alignnone size-full wp-image-1763" alt="Google-Play-40" src="images/Google-Play-40.jpg" id="btnGP1" width="115" height="40" /></a> <a href="http://itunes.apple.com/no/app/id422554810" target="_blank"><img id="btnAppStore1" class="size-full wp-image-1737 alignnone" alt="Download_on_the_App_Store_Badge_NO_135x40_0824" src="images/Download_on_the_App_Store_Badge_NO_135x40_0824.png" width="135" height="40" /></a></p>
+<p style="text-align: right;"><a href="https://market.android.com/details?id=no.aftenposten.reader" target="_blank"><img class="alignnone size-full wp-image-1763" alt="Google-Play-40" src="images/Google-Play-40.jpg" id="btnGP1" width="115" height="40"></a> <a href="http://itunes.apple.com/no/app/id422554810" target="_blank"><img id="btnAppStore1" class="size-full wp-image-1737 alignnone" alt="Download_on_the_App_Store_Badge_NO_135x40_0824" src="images/Download_on_the_App_Store_Badge_NO_135x40_0824.png" width="135" height="40"></a></p>
 <p>&nbsp;</p>
 </div>
 </div>
 <div class="grid">
-<div class="grid-1-4"><img class="aligncenter size-medium wp-image-1699" alt="Arkiv-illustrasjon-min-side" src="images/Arkiv-illustrasjon-min-side-300x233.jpg" width="300" height="233" /></div>
+<div class="grid-1-4"><img class="aligncenter size-medium wp-image-1699" alt="Arkiv-illustrasjon-min-side" src="images/Arkiv-illustrasjon-min-side-300x233.jpg" width="300" height="233"></div>
 <div class="grid-3-4">
-<h3 style="text-align: left;">Aftenposten Arkiv</h3>
-<p style="text-align: left;"><strong><em>Tilgang til mer enn 150 år med Aftenposten</em></strong><br />
+<h3 style="text-align: left;">Aftenposten Arkiv</h3> 
+<p style="text-align: left;"><strong><em>Tilgang til mer enn 150 år med Aftenposten</em></strong><br>
 Lær historien å kjenne gjennom Aftenpostens arkiv. Arkivet inneholder de aller fleste utgavene av Aftenposten – fra den første utgaven som kom ut 14.mai 1860 og frem til i dag! Dette er innhold du ikke finner på Google.</p>
-<p style="text-align: left;">Søk i arkivet i din nettleser (krever Adobe Flash Player)</p>
-<p style="text-align: right;"><a href="https://play.google.com/store/apps/details?id=no.aftenposten_arkiv.reader" target="_blank"><img id="btnGP2" class="alignnone size-full wp-image-1763" alt="Google-Play-40" src="images/Google-Play-40.jpg" width="115" height="40" /></a> <a href="http://itunes.apple.com/no/app/id422554989" target="_blank"><img id="btnAppStore2" class="alignnone size-full wp-image-1737" alt="Download_on_the_App_Store_Badge_NO_135x40_0824" src="images/Download_on_the_App_Store_Badge_NO_135x40_0824.png" width="135" height="40" /></a></p>
+
+<p style="text-align: right;"><a href="https://play.google.com/store/apps/details?id=no.aftenposten_arkiv.reader" target="_blank"><img id="btnGP2" class="alignnone size-full wp-image-1763" alt="Google-Play-40" src="images/Google-Play-40.jpg" width="115" height="40"></a> <a href="http://itunes.apple.com/no/app/id422554989" target="_blank"><img id="btnAppStore2" class="alignnone size-full wp-image-1737" alt="Download_on_the_App_Store_Badge_NO_135x40_0824" src="images/Download_on_the_App_Store_Badge_NO_135x40_0824.png" width="135" height="40"></a></p>
 <p>&nbsp;</p>
 </div>
 </div>
 <div class="grid">
-<div class="grid-1-4"><img class="aligncenter size-medium wp-image-1571" alt="A-mag-paa-iPad-stort-bilde" src="images/A-mag-paa-iPad-stort-bilde-300x216.png" width="300" height="216" /></div>
+<div class="grid-1-4"><img class="aligncenter size-medium wp-image-1571" alt="A-mag-paa-iPad-stort-bilde" src="images/A-mag-paa-iPad-stort-bilde-300x216.png" width="300" height="216"></div>
 <div class="grid-3-4">
 <h3 style="text-align: left;">A-magasinet på iPad</h3>
-<p style="text-align: left;"><strong><em>Aftenpostens populære helgemagasin, tilpasset for lesing på ipad</em></strong><br />
+<p style="text-align: left;"><strong><em>Aftenpostens populære helgemagasin, tilpasset for lesing på ipad</em></strong><br>
 A-magasinet leses ukentlig av mer enn 630 000 lesere! I A-magasinet finner du samfunnsaktuelle og engasjerende reportasjer fra innland og utland, samt velskrevne intervjuer og spalter.</p>
-<p style="text-align: right;"><a href="http://itunes.apple.com/no/app/id427164337" target="_blank"><img id="btnAppStore4" class="alignnone size-full wp-image-1737" alt="Download_on_the_App_Store_Badge_NO_135x40_0824" src="images/Download_on_the_App_Store_Badge_NO_135x40_0824.png" width="135" height="40" /></a></p>
+<p style="text-align: right;"><a href="http://itunes.apple.com/no/app/id427164337" target="_blank"><img id="btnAppStore4" class="alignnone size-full wp-image-1737" alt="Download_on_the_App_Store_Badge_NO_135x40_0824" src="images/Download_on_the_App_Store_Badge_NO_135x40_0824.png" width="135" height="40"></a></p>
 <p>&nbsp;</p>
 </div>
 </div>
 <div class="grid">
-<div class="grid-1-4"><img class="aligncenter size-medium wp-image-1477" alt="apno" src="images/DIGITAL-min-side-300x272.jpg" width="300" height="272" /></div>
+<div class="grid-1-4"><img class="aligncenter size-medium wp-image-1477" alt="apno" src="images/DIGITAL-min-side-300x272.jpg" width="300" height="272"></div>
 <div class="grid-3-4">
 <h3 style="text-align: left;">Aftenposten.no</h3>
-<p style="text-align: left;"><strong><em>Oppdaterte nyheter &#8211; hele døgnet</em></strong><br />
-Aftenposten.no leser du i din nettleser &#8211; på mobil, nettbrett eller mac/pc. Følg dine favorittjournalister og bli varslet når vi skriver om akkurat det som interesserer deg! Lagre artikler, og les dem når det passer deg &#8211; på den enheten du har for hånden.</p>
-<p style="text-align: left;"><a href="http://www.aftenposten.no" target="_blank">Gå til aftenposten.no</a></p>
-<p>&nbsp;<br />
+<p style="text-align: left;"><strong><em>Oppdaterte nyheter – hele døgnet</em></strong><br>
+Aftenposten.no leser du i din nettleser – på mobil, nettbrett eller mac/pc. Følg dine favorittjournalister og bli varslet når vi skriver om akkurat det som interesserer deg! Lagre artikler, og les dem når det passer deg – på den enheten du har for hånden.</p>
+
+<p>&nbsp;<br>
 &nbsp;</p>
 </div>
 </div>
 <div class="grid">
-<div class="grid-1-4"><img class="aligncenter size-full wp-image-1698" alt="min-side-mobil-app" src="images/androidnav.png" width="270" height="210" /></div>
+<div class="grid-1-4"><img class="aligncenter size-full wp-image-1698" alt="min-side-mobil-app" src="images/apapp.png" width="270" height="210"></div>
 <div class="grid-3-4">
-<h3 style="text-align: left;">Aftenpostens mobilapp</h3>
-<p style="text-align: left;"><strong><em>Bli varslet om viktige nyheter</em></strong><br />
+<h3 style="text-align: left;">AP.no mobilapp</h3>
+<p style="text-align: left;"><strong><em>Bli varslet om viktige nyheter</em></strong><br>
 Med vår nyhetsapp på mobilen kan du holde deg oppdatert uansett hvor du er. Du kan velge å motta varsler om viktige nyhetshendelser, slik at du kan følge med når det skjer.</p>
-<p style="text-align: right;"><a href="https://play.google.com/store/apps/details?id=no.cita" target="_blank"><img class="alignnone size-full wp-image-1763" alt="Google-Play-40" src="images/Google-Play-40.jpg" id="btnGP3" width="115" height="40" /></a> <a href="https://itunes.apple.com/no/app/aftenposten-for-iphone/id403509822" target="_blank"><img class="alignnone size-full wp-image-1737" alt="Download_on_the_App_Store_Badge_NO_135x40_0824" src="images/Download_on_the_App_Store_Badge_NO_135x40_0824.png" id="btnAppStore3" width="135" height="40" /></a></p>
+<p style="text-align: right;"><a href="https://play.google.com/store/apps/details?id=no.cita" target="_blank"><img class="alignnone size-full wp-image-1763" alt="Google-Play-40" src="images/Google-Play-40.jpg" id="btnGP3" width="115" height="40"></a> <a href="https://itunes.apple.com/no/app/aftenposten-for-iphone/id403509822" target="_blank"><img class="alignnone size-full wp-image-1737" alt="Download_on_the_App_Store_Badge_NO_135x40_0824" src="images/Download_on_the_App_Store_Badge_NO_135x40_0824.png" id="btnAppStore3" width="135" height="40"></a></p>
 </div>
 </div>
       </div>
@@ -706,10 +1372,10 @@ Med vår nyhetsapp på mobilen kan du holde deg oppdatert uansett hvor du er. Du
         </div>
 </div>
 					<span class="bl-icon bl-icon-close"></span>
-				</section>
+				</div></section>
 			</div>
 		</div><!-- /container -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquery.min.js"></script>
 		<script src="js/boxlayout.js"></script>
 		<script type="text/javascript">
 			/*  allow :active styles to work in your CSS on a page in Mobile Safari: */
@@ -721,7 +1387,7 @@ Med vår nyhetsapp på mobilen kan du holde deg oppdatert uansett hvor du er. Du
 
 			$(document).ready(function() {
 				$("a.moreInfoTrigger").bind('click', function(e){
-/*
+									/*
 				    var toShow = $(this).attr('href');
 					$(toShow).stop().slideToggle('500');
 */

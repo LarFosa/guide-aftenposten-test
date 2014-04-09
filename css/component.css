@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700);
+@import url(../fonts/font_googleapis_opensans.css);
 
 @font-face {
 	font-family: 'icomoon';
@@ -55,7 +55,6 @@ a {
 	font-weight: 700;
 	letter-spacing: 2px;
 	padding: 0 5px;
-	text-transform: lowercase;
 	font-size: 80%;
 }
 
@@ -98,7 +97,7 @@ b {
 .bl-main > section:active{
 	background: #5CA625;
 }
-*/
+*/ 
 .bl-main > section:first-child {
 	top: 0;
 	left: 0;
@@ -270,7 +269,7 @@ b {
 	font-size: 1.5em;
 	font-weight: 700;
 	margin: 0 0 20px 0;
-	color: #5CA625;
+	color: #00aeef;
 }
 
 .bl-content article {
@@ -287,7 +286,7 @@ b {
 }
 
 .bl-content a {
-	color: #5CA625;
+	color: #00aeef;
 }
 
 .bl-content ul {
@@ -316,9 +315,9 @@ b {
 /* Separated for a better overview and control */
 
 .bl-main > section {
-	-webkit-transition: all .5s ease-in-out 0s;
-	-moz-transition: all .5s ease-in-out 0s;
-	transition: all .5s ease-in-out 0s;
+	-webkit-transition: all .3s ease-in-out 0s;
+	-moz-transition: all .3s ease-in-out 0s;
+	transition: all .3s ease-in-out 0s;
 	-webkit-backface-visibility:hidden;
 	-moz-backface-visibility:hidden;
 	-ms-backface-visibility:hidden;
@@ -410,7 +409,7 @@ section.bl-expand .bl-icon-close {
 	-webkit-perspective: 1000;
 }
 .bl-content .moreInfo.open {
-	border-bottom: 1px solid #5CA625;
+	border-bottom: 1px solid #00aeef;
 }
 
 .bl-content .moreInfo.first {
@@ -418,7 +417,7 @@ section.bl-expand .bl-icon-close {
 	margin-top: 30px;
 }
 .bl-content .moreInfo.first.open {
-	border-top: 1px solid #5CA625;
+	border-top: 1px solid #00aeef;
 }
 
 
@@ -454,10 +453,10 @@ section.bl-expand .bl-icon-close {
 }
 
 .bl-content .open a.moreInfoTrigger {
-	background: #5CA625;
+	background: #00aeef;
 	color: #fff;
-	border-left: 1px solid #5CA625;
-	border-right: 1px solid #5CA625;
+	border-left: 1px solid #00aeef;
+	border-right: 1px solid #00aeef;
 }
 .bl-content a.moreInfoTrigger:before,
 .bl-content a.moreInfoTrigger:after {

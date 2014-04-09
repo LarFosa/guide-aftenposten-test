@@ -8,6 +8,8 @@
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
+var i = 0;
+ 
 var Boxlayout = (function() {
 
 	var $el = $( '#bl-main' ),
@@ -46,11 +48,25 @@ var Boxlayout = (function() {
 		
 		$sections.each( function() {
 			
+			
 			var $section = $( this );
-
+			
+			
+			
+			 var params = location.search.substr(location.search.indexOf("?"));
+			 var sval = "";
+			 params = params.split("=");
+			// split param and value into individual pieces
+			
+			if(params[1] == i) {
+				$section.data( 'open', true ).addClass( 'bl-expand bl-expand-top' );
+			}
+			
+		
 			// expand the clicked section and scale down the others
+			if(i!=1) {
 			$section.on( 'click', function() {
-
+				
 				if( !$section.data( 'open' ) ) {
 					$section.data( 'open', true ).addClass( 'bl-expand bl-expand-top' );
 					$el.addClass( 'bl-expand-item' );	
@@ -73,7 +89,7 @@ var Boxlayout = (function() {
 				return false;
 
 			} );
-
+			}	i++;
 		} );
 
 		// clicking on a work item: the current section scales down and the respective work panel slides up

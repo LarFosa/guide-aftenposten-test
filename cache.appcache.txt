@@ -1,35 +1,66 @@
 CACHE MANIFEST
-# v1 2011-08-14
+# v2 2011-08-14
 # This is another comment
 index.html
 feedback.html
 faq.html
+sendFeedback.php
 js/boxlayout.js
 js/modernizr.custom.js
+js/jquery.min.map
+js/jquery.min.js
 css/component.css
+hotspot/android_phone.jpg
+hotspot/index.html
+hotspot/js/jquery.tooltipster.js
+hotspot/js/jquery.tooltipster.min.js
+hotspot/css/tooltipster.css
+hotspot/css/themes/tooltipster-light.css 
+hotspot/css/themes/tooltipster-noir.css
+hotspot/css/themes/tooltipster-punk.css
+hotspot/css/themes/tooltipster-shadow.css
 images/nyapp.png
 images/A-mag-paa-iPad-stort-bilde-300x216.png
-images/Arkiv-illustrasjon-min-side-300x233.jpeg
-images/DIGITAL-min-side-300x272.jpeg
+images/Arkiv-illustrasjon-min-side-300x233.jpg 
+images/DIGITAL-min-side-300x272.jpg
 images/Download_on_the_App_Store_Badge_NO_135x40_0824.png
-images/eAvis-min-side-300x233.jpeg
-images/Google-Play-40.jpeg
+images/eAvis-min-side-300x233.jpg
+images/Google-Play-40.jpg
 images/guide.png
-images/min-side-mobil-app.jpeg
-images/pluss_skjerm1.jpeg
-images/pluss_skjerm2.jpeg
+images/min-side-mobil-app.jpg
+images/pluss_skjerm1.jpg
+images/pluss_skjerm2.jpg
 images/true.svg
 images/wizardSprite@22x.png
-fonts/icomoon.dev
+images/android.png
+images/androidnav.png
+images/ios.png
+images/ipad.png
+images/iosnav.png
+images/ipad_swipe.png
+images/android_swipe.png
+images/iphone_swipe.png
+images/ipadnav.png
+images/payment1.png
+images/payment2.png
+images/apapp.png
+fonts/icomoon.dev.svg
 fonts/icomoon.eot
 fonts/icomoon.ttf
 fonts/icomoon.svg
 fonts/icomoon.woff
 fonts/license.txt
+fonts/DXI1ORHCpsQm3Vp6mXoaTaRDOzjiPcYnFooOUGCOsRk.woff
+fonts/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff
+fonts/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff
+fonts/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff
+fonts/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff
+fonts/font_googleapis_opensans.css
 
 # Use from network if available
 NETWORK:
 *
+
 
 # Fallback content
 FALLBACK:
